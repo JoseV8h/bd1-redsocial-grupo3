@@ -1,0 +1,96 @@
+
+1. ENTORNOS Y COMANDOS UTILIZADOS EN WINDOWS (CMD)
+
+[Navegación al directorio de trabajo]
+cd %USERPROFILE%\OneDrive\Desktop
+
+[Estructura 1: Organizacional (SIGET)]
+mkdir SIGET\Modulo_Recoleccion_Datos\Sensores
+mkdir SIGET\Modulo_Recoleccion_Datos\Camaras
+mkdir SIGET\Modulo_Analisis_Control\Algoritmos
+mkdir SIGET\Modulo_Analisis_Control\Configuraciones
+mkdir SIGET\Modulo_Reportes\Diarios
+mkdir SIGET\Modulo_Reportes\Mensuales
+mkdir SIGET\Logs_Sistema
+mkdir SIGET\Backups
+
+[Creación de archivos vacíos]
+type nul > SIGET\Modulo_Recoleccion_Datos\Sensores\sensor01.txt
+type nul > SIGET\Modulo_Recoleccion_Datos\Camaras\camara_interseccion.config
+type nul > SIGET\Modulo_Analisis_Control\Algoritmos\algoritmo_control.py
+type nul > SIGET\Modulo_Analisis_Control\Configuraciones\parametros_trafico.json
+type nul > SIGET\Modulo_Reportes\Diarios\reporte_diario.log
+type nul > SIGET\Modulo_Reportes\Mensuales\resumen_mensuales.txt
+
+[Renombración y corrección de archivos]
+ren SIGET\Modulo_Reportes\Mensuales\resumen_mensuales.txt resumen_mensual.txt
+
+[Asignación de atributos de seguridad]
+attrib +R SIGET\Modulo_Recoleccion_Datos\Sensores\sensor01.txt
+attrib +H SIGET\Backups
+
+[Visualización del árbol de directorios]
+tree /F SIGET
+
+
+[Estructura 2: Operacional de Datos (SIGET_Datos_Operativos)]
+mkdir SIGET_Datos_Operativos\Flujo_Tiempo_Real\Interseccion_A
+mkdir SIGET_Datos_Operativos\Flujo_Tiempo_Real\Interseccion_B
+mkdir SIGET_Datos_Operativos\Alertas_Infracciones\Fotomultas
+mkdir SIGET_Datos_Operativos\Alertas_Infracciones\Prioridad_Emergencias
+
+[Creación de archivos de eventos en tiempo real]
+type nul > SIGET_Datos_Operativos\Flujo_Tiempo_Real\Interseccion_A\telemetria_vial.csv
+type nul > SIGET_Datos_Operativos\Flujo_Tiempo_Real\Interseccion_B\estado_semaforos.log
+type nul > SIGET_Datos_Operativos\Alertas_Infracciones\Fotomultas\infraccion_001.dat
+type nul > SIGET_Datos_Operativos\Alertas_Infracciones\Prioridad_Emergencias\alerta_ambulancia.txt
+
+[Consulta detallada de información y propietarios]
+dir /Q /N SIGET_Datos_Operativos
+tree /F SIGET_Datos_Operativos
+
+2. ENTORNOS Y COMANDOS UTILIZADOS EN LINUX (GIT BASH)
+
+Ubicación inicial de ejecución: ~/OneDrive/Desktop
+
+[Estructura 1: Organizacional (SIGET_Linux)]
+mkdir -p SIGET_Linux/Modulo_Recoleccion_Datos_Linux/{Sensores,Camaras}
+mkdir -p SIGET_Linux/Modulo_Analisis_Control/{Algoritmos,Configuraciones}
+mkdir -p SIGET_Linux/Modulo_Reportes_Linux/{Diarios_Linux,Mensuales_Linux}
+mkdir -p SIGET_Linux/{Logs_Sistema_Linux,Backups_Linux}
+
+[Creación de archivos con 'touch']
+touch SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Sensores/sensor01_Linux.txt
+touch SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Camaras/camara_interseccion_Linux.config
+touch SIGET_Linux/Modulo_Analisis_Control/Algoritmos/algoritmo_control_Linux.py
+touch SIGET_Linux/Modulo_Analisis_Control/Configuraciones/parametros_trafico_Linux.json
+touch SIGET_Linux/Modulo_Reportes_Linux/Diarios_Linux/reporte_diario_Linux.log
+touch SIGET_Linux/Modulo_Reportes_Linux/Mensuales_Linux/resumen_mensual_Linux.txt
+
+[Renombración secuencial de directorios con 'mv']
+mv SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Sensores SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Sensores_Linux
+mv SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Camaras SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Camaras_Linux
+mv SIGET_Linux/Modulo_Analisis_Control SIGET_Linux/Modulo_Analisis_Control_Linux
+mv SIGET_Linux/Modulo_Analisis_Control_Linux/Algoritmos SIGET_Linux/Modulo_Analisis_Control_Linux/Algoritmos_Linux
+mv SIGET_Linux/Modulo_Analisis_Control_Linux/Configuraciones SIGET_Linux/Modulo_Analisis_Control_Linux/Configuraciones_Linux
+
+[Asignación de permisos de seguridad con 'chmod']
+chmod 600 SIGET_Linux/Modulo_Recoleccion_Datos_Linux/Sensores_Linux/sensor01_Linux.txt
+chmod 700 SIGET_Linux/Backups_Linux
+
+[Inspección recursiva de la estructura]
+ls -laR SIGET_Linux
+
+
+[Estructura 2: Operacional de Datos (SIGET_Datos_Operativos_Linux)]
+mkdir -p SIGET_Datos_Operativos_Linux/Flujo_Tiempo_Real_Linux/{Interseccion_A_Linux,Interseccion_B_Linux}
+mkdir -p SIGET_Datos_Operativos_Linux/Alertas_Infracciones_Linux/{Fotomultas_Linux,Prioridad_Emergencias_Linux}
+
+[Creación de archivos de registros operativos]
+touch SIGET_Datos_Operativos_Linux/Flujo_Tiempo_Real_Linux/Interseccion_A_Linux/telemetria_vial_Linux.csv
+touch SIGET_Datos_Operativos_Linux/Flujo_Tiempo_Real_Linux/Interseccion_B_Linux/estado_semaforos_Linux.log
+touch SIGET_Datos_Operativos_Linux/Alertas_Infracciones_Linux/Fotomultas_Linux/infraccion_001_Linux.dat
+touch SIGET_Datos_Operativos_Linux/Alertas_Infracciones_Linux/Prioridad_Emergencias_Linux/alerta_ambulancia_Linux.txt
+
+[Inspección recursiva y verificación de permisos]
+ls -laR SIGET_Datos_Operativos_Linux
